@@ -8,7 +8,7 @@ export class Navbar extends Component {
   render() {
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-sticky">
+        <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark navbar-sticky">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               NewsApp
@@ -68,7 +68,7 @@ export class Navbar extends Component {
                       <Link className="dropdown-item" to="/health">
                         Health
                       </Link>
-                      <Link className="dropdown-item" to="/science">
+                      <Link className="dropdown-item " to="/science">
                         Science
                       </Link>
                     </li>
