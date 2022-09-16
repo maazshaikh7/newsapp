@@ -46,12 +46,12 @@ export class News extends Component {
     this.setState({ page: (this.state.page -= 1) });
     this.updateNews();
   };
-
+  
   handleNextClick = async () => {
     this.setState({ page: (this.state.page += 1) });
     this.updateNews();
   };
-
+  
   render() {
     return (
       <>
@@ -67,11 +67,11 @@ export class News extends Component {
               disabled={this.state.page <= 1}
               className="btn btn-secondary"
               onClick={this.handlePreviousClick}
-            >
+              >
               <i
                 className="fa fa-angle-double-left font-size"
                 style={{ fontSize: "30px" }}
-              ></i>
+                ></i>
             </button>
             <button
               type="button"
@@ -81,18 +81,18 @@ export class News extends Component {
               }
               className="btn btn-secondary"
               onClick={this.handleNextClick}
-            >
+              >
               <i
                 className="fa fa-angle-double-right font-size"
                 style={{ fontSize: "30px" }}
-              ></i>
+                ></i>
             </button>
           </div>
 
           {this.state.loading && <Spinner />}
           <div className="row">
             {!this.state.loading &&
-              this.state.articles.map((element) => {
+              this.state.articles?.map((element) => {
                 return (
                   <div className="col-md-4 " key={element.url}>
                     <Newsitem
@@ -102,7 +102,7 @@ export class News extends Component {
                       newsUrl={element.url}
                       publishTime={element.publishedAt}
                       author={element.author}
-                    />
+                      />
                   </div>
                 );
               })}
